@@ -4,11 +4,11 @@ module.exports = {
   entry: "./src/index.jsx",
   output: {
     path: path.join(__dirname, "public/js"),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -23,11 +23,11 @@ module.exports = {
                 "@babel/preset-env",
                 {
                   targets: {
-                    node: "current"
-                  }
-                }
+                    node: "current",
+                  },
+                },
               ],
-              "@babel/preset-react"
+              "@babel/preset-react",
             ],
             plugins: [
               [
@@ -35,31 +35,31 @@ module.exports = {
                 {
                   libraryName: "@material-ui/icons",
                   libraryDirectory: "",
-                  camel2DashComponentName: false
-                }
-              ]
-            ]
-          }
-        }
+                  camel2DashComponentName: false,
+                },
+              ],
+            ],
+          },
+        },
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: "style-loader"
+            loader: "style-loader",
           },
           {
             loader: "css-loader",
             options: {
               localsConvention: "camelCase",
               modules: {
-                localIdentName: "[path][name]__[local]--[hash:base64:5]"
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
