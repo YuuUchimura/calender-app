@@ -45,8 +45,6 @@ const mergeProps = (stateProps, dispatchProps) => {
     calendar: month,
     schedules: { items: schedules },
   } = stateProps;
-  // console.log(month)
-  // console.log(schedules)
   const calendar = setSchedules(createCalendar(month), schedules);
 
   return {

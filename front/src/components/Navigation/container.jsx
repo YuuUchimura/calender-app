@@ -8,8 +8,6 @@ import {
   formatMonth,
 } from "../../services/calendar";
 import { calendarSetMonth } from "../../redux/calendar/actions";
-import dayjs from "dayjs";
-
 import { asyncSchedulesFetchItem } from "../../redux/schedules/effects";
 
 const mapStateToProps = (state) => ({ calendar: state.calendar });

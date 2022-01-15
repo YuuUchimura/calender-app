@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
-
 import * as styles from "./style.css";
-
 import { ImageList, Typography } from "@material-ui/core";
-
 import CalendarElement from "../CalendarElement";
-// import { DateRangeSharp } from "@material-ui/icons";
 
 const days = ["日", "月", "火", "水", "木", "金", "土"];
 

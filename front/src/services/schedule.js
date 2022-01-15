@@ -9,5 +9,15 @@ export const setSchedules = (calendar, schedules) =>
 
 export const formatSchedule = (schedule) => ({
   ...schedule,
-  date: dayjs(schedule.data),
+  date: dayjs(schedule.date),
 });
+
+export const isCloseDialog = (schedule) => {
+  const message = "保存されていない変更を破棄しますか？";
+  // こう書くことでisScheduleEmptyがtrueでないときのみ実行される
+  return isScheduleEmpty(schedule) || window.confirm(message);
+};
+
+const isScheduleEmpty = (schedule) => {
+  !schedule.title && !schedule.description && !schedule.location;
+};

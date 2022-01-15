@@ -3,26 +3,28 @@ import dayjs from "dayjs";
 export const createCalendar = (month) => {
   // 現在の月取得
   const firstDay = getMonth(month);
-  // 現在の日にちの取得
+  // 現在の月の初日を入れている
   const firstDayIndex = firstDay.day();
-
+  
   return Array(35)
     .fill(0)
     .map((_, i) => {
+      // firstDayIndexはその月の最終日になると１から繰り返されるため35回まわしてもいい感じになる。
       const diffFromFirstDay = i - firstDayIndex;
+      // 日にdiffFormFirstDayの数字分加算
       const day = firstDay.add(diffFromFirstDay, "day");
-
+      
       return day;
     });
 };
-// 月の取得
+// 年または月の取得（実行した際の引数による）
 export const getMonth = ({ year, month }) => {
   return dayjs(`${year}-${month}`);
 };
 
 export const isSameDay = (d1, d2) => {
   const format = "YYYYMMDD";
-  // format(format)=> とは？
+  // format("YYYYMMDD")となっている
   return d1.format(format) === d2.format(format);
 };
 
